@@ -9,11 +9,14 @@ namespace EmbeddedResourcesHandler
     public class EmbeddedResourcesServices
     {
         private static Assembly assembly;
+        public static Func<string, string, bool> Contains = (x, y) => x.Contains(y),
+            equals = (x, y) => string.Equals(x, y, StringComparison.CurrentCultureIgnoreCase);
 
         public EmbeddedResourcesServices()
         {
             assembly = Assembly.GetExecutingAssembly();
         }
+
 
         /// <summary>
         /// this function returns a stream from an embedded resource file name
@@ -21,10 +24,18 @@ namespace EmbeddedResourcesHandler
         /// </summary>
         /// <param name="filename">the file name of embedded resource</param>
         /// <returns>a stream from the embedded file</returns>
-        public Stream GetFileStream(string filename)
+        public Stream GetFileStream(string filename) => GetFileStream(filename, Contains);
+
+        /// <summary>
+        /// this function returns a stream from an embedded resource file name
+        /// YOU SHOULD CLOSE THE STREAM WHEN YOU'RE DONE
+        /// </summary>
+        /// <param name="filename">the file name of embedded resource</param>
+        /// <returns>a stream from the embedded file</returns>
+        public Stream GetFileStream(string filename, Func<string, string, bool> matchingPredicate)
         {
             var filePath = assembly.GetManifestResourceNames()
-                .First(f => f.EndsWith(filename));
+                .First(x => matchingPredicate(x, filename));
             if (string.IsNullOrEmpty(filePath))
                 throw new FileNotFoundException($"{filename} doesn't exist in the application embedded resources");
             return assembly.GetManifestResourceStream(filePath);
