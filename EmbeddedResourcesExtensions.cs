@@ -15,7 +15,7 @@ namespace EmbeddedResourcesHandler
         /// this function returns a stream from an embedded resource file name
         /// YOU SHOULD CLOSE THE STREAM WHEN YOU'RE DONE
         /// </summary>
-        /// <param name="filename">the file name of embedded resource</param>
+        /// <param name="filename">the file name of embedded resource</param> 
         /// <returns>a stream from the embedded file</returns>
         public static Stream GetFileStream(this Assembly assembly, string filename) 
             => assembly.GetFileStream(filename, EmbeddedResourcesServicesExtensions.Contains);

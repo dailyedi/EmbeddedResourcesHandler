@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="EmbeddedResourcesHandler.EmbeddedResourcesServicesExtensions">
+    <Position X="0.5" Y="6.25" Width="7" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAACAAAAAAAABAAAAAAAAAAACAAAAAIAQAgA=</HashCode>
+      <FileName>EmbeddedResourcesExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EmbeddedResourcesHandler.EmbeddedResourcesServices">
+    <Position X="0.5" Y="3" Width="5.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAACAAAAAAAABAAAAgAAAAAACAAAAAIAQAgA=</HashCode>
+      <FileName>EmbeddedResourcesServices.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
