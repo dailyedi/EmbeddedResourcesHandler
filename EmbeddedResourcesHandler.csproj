@@ -6,7 +6,7 @@
     <Company>DailyEDI</Company>
     <Description>a simple wrapper around the embedded resources to allow you to quickly get file stream in different ways without having to include the entire name (matter of fact you can specify your matching predicate to match the resource name to the resources you have)</Description>
     <PackageProjectUrl>https://github.com/dailyedi/EmbeddedResourcesHandler</PackageProjectUrl>
-    <PackageIcon>128x114.jpg</PackageIcon>
+   
     <RepositoryUrl>https://github.com/dailyedi/EmbeddedResourcesHandler</RepositoryUrl>
     <PackageTags>EmbeddedResources;EmbeddedResourcesHandler;EmbeddedResourcesWrapper</PackageTags>
     <NeutralLanguage>en</NeutralLanguage>
@@ -17,16 +17,6 @@
 	<PackageId>DailyEDI.$(AssemblyName)</PackageId>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\..\..\Desktop\logos\128x114.jpg">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath> 
-    </None>
-  </ItemGroup>
-
-	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
-		<Exec Command="dotnet pack -p:PackageVersion=$(ver) --no-build --configuration $(Configuration) --output &quot;$(SolutionDir)nuget" />
-	  <Exec Command="nuget sign &quot;$(SolutionDir)nuget\DailyEDI.$(AssemblyName).$(ver).nupkg&quot; -CertificateSubjectName &quot;Daily EDI&quot;  -Timestamper http://timestamp.sectigo.com" />
-	</Target>
+  
 
 </Project>
