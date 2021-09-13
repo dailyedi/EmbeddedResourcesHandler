@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>DailyEDI</Authors>
+    <Company>DailyEDI</Company>
+    <Description>a simple wrapper around the embedded resources to allow you to quickly get file stream in different ways without having to include the entire name (matter of fact you can specify your matching predicate to match the resource name to the resources you have)</Description>
+    <PackageProjectUrl>https://github.com/dailyedi/EmbeddedResourcesHandler</PackageProjectUrl>
+   
+    <RepositoryUrl>https://github.com/dailyedi/EmbeddedResourcesHandler</RepositoryUrl>
+    <PackageTags>EmbeddedResources;EmbeddedResourcesHandler;EmbeddedResourcesWrapper</PackageTags>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Copyright>daily edi ltd.</Copyright>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <SignAssembly>False</SignAssembly>
+	<ver>$([System.DateTime]::Now.ToString("yyyy.M.d.HHmm"))</ver>
+	<PackageId>DailyEDI.$(AssemblyName)</PackageId>
+  </PropertyGroup>
+
+  
+
+</Project>
