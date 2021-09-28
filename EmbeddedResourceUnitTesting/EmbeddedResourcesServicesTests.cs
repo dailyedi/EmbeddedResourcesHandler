@@ -17,7 +17,7 @@ namespace EmbeddedResourceUnitTesting
         public void Setup()
         {
             _embeddedResource = new EmbeddedResourcesServices();
-            _embeddedResourceExternal = new EmbeddedResourcesServices(@"C:\Users\Mohamed_Reda\source\repos\EmbeddedResourcesHandler\EmbeddedResourceUnitTesting\MockingFilesTesting\TestResourceAssembly.dll");
+            _embeddedResourceExternal = new EmbeddedResourcesServices(Path.GetFullPath(@"..\..\..\MockingFilesTesting\TestResourceAssembly.dll"));
         }
         [Test]
         public void Contains_whenCalled_ReturnsTrue()
@@ -40,7 +40,7 @@ namespace EmbeddedResourceUnitTesting
         [Test]
         public void GetFileStream_FilenameNotExsitOrResourcesEmptyExternal_ReturnException()
         {
-            Assert.That(() => _embeddedResourceExternal.GetFileStream("test")
+            Assert.That(() => _embeddedResourceExternal.GetFileStream("KK")
             , Throws.Exception.TypeOf<FileNotFoundException>());
         }
         [Test]
