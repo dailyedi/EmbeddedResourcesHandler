@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -17,6 +18,9 @@ namespace EmbeddedResourcesHandler
 
         public EmbeddedResourcesServices(string path) => asm = Assembly.LoadFile(path);
 
+        public List<string> GetResourcesNames() => GetResourcesPaths().Select(x => x.Contains('.') ? x.Substring(x.IndexOf('.') + 1) : x).ToList();
+
+        public List<string> GetResourcesPaths() => asm.GetManifestResourceNames().ToList();
 
         /// <summary>
         /// this function returns a stream from an embedded resource file name
